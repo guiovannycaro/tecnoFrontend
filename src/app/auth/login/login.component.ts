@@ -49,9 +49,10 @@ onSubmit()
              console.log(this.userdata);
 
              if(this.userdata === true){
-
-                          sessionStorage.setItem('username',this.userdata.usu_contrasena);
-
+              this.email = this.loginform.get('usu_username')?.value || '';
+              console.log('dato del usario ' +  this.email); // Recuperar el username
+                          sessionStorage.setItem('username',this.email);
+                          console.log('Usuario guardado:', sessionStorage.getItem('username')); // Verifica que el dato se guarde
                           this.router.navigate(['/dashboard']);
 
              }else{

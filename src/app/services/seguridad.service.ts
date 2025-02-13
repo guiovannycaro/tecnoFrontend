@@ -29,11 +29,11 @@ export class SeguridadService {
     );
   }
 
-  obtenerPerfil(datos: any): Observable<any> {
-    console.log("Enviando datos al servicio de autenticación:", datos);
+  obtenerPerfil(usuario: string): Observable<any> {
+    console.log("Enviando datos al servicio de autenticación:", usuario);
     const direccion = `${this.url}Seguridad/ObtenerPerfil`;
 
-    return this.http.get<any>(direccion, datos).pipe(
+    return this.http.get<any>(direccion, { params: { datos: usuario } }).pipe(
       catchError((error) => {
         console.error("Error en la solicitud de obtener perfil:", error);
         return throwError(() => new Error("Error en al consultar el perfil."));

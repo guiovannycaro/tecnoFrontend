@@ -26,7 +26,12 @@ export class UsuariosService {
     })
   }
 
-
+getUsuarioPerfil(datos: string): Observable<any>{
+  let direccion = this.baseUrl + "/Usuarios/ObtUsuarioPerfil?datos="+ datos;
+  let response = this.http.get<any>(direccion);
+    console.log(response);
+    return response;
+}
 
   getUsuariosList(): Observable<any>{
     let direccion = this.baseUrl + "/Usuarios/ListarUsuarios";

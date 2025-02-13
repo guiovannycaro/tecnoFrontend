@@ -45,14 +45,16 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
-                    <div class="media">
-                        <img src="assets/dist/img/user2-160x160.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                        <div class="media-body">
-                            <h3 class="dropdown-item-title">
-                                Brad Diesel
+                    <div *ngFor="let i of perusu">
+                        <div class="media">
+                            <img src="assets/dist/img/user2-160x160.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    {{i.usuario}}
 
-                            </h3>
-                            <p class="text-sm">Call me whenever you can...</p>
+                                </h3>
+                                <p class="text-sm">{{i.perfil}}</p>
+                            </div>
                         </div>
                     </div>
                     <!-- Message End -->
