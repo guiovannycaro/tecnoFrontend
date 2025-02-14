@@ -56,7 +56,6 @@ export class PreferidosService {
 
     console.log("parametro a enviar " + data)
     let direccion = this.baseUrl + "/Preferencias/DevolGenComicPrefUsuario?datos=" + data +"&usuario="+usuario;
-   console.log(direccion);
     let response = this.http.get<any>(direccion);
     console.log(response);
     return response;

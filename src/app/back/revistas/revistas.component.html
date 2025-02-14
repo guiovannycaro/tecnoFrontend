@@ -37,6 +37,23 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    <div id="izquierda">
+                        <!--inicio_izquierda-->
+                        <div *ngFor="let i of commic" id="contenedorntc">
+                            <!--inicio_contenedorntc-->
+                            <div id="ntcfondo">
+                                <div id="titulonoticias" class="estilo4"><b>{{i.com_nombre}}</b></div>
+                                <div id="texxto" class="Estilo5">{{i.com_descripcion}}</div>
+                                <div id="texxto">
+                                    <a href="#" (click)="$event.preventDefault(); openEditProForm(i.com_id);">
+                                        <div id="btn_verdocumento"><b>Preferir</b></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="imagenrnoticia"> <img src="../../../assets/imagenes/{{i.com_imagen}}" width="80%" height="100%"></div>
+                        </div>
+                    </div>
+
 
                 </div>
                 <!-- /.card-body -->
@@ -51,4 +68,73 @@
     </div>
 
 </div>
+<style>
+    .scroll-container {
+        width: 100%;
+        height: 700px;
+        overflow-y: auto;
+        /* Habilita la barra de desplazamiento vertical */
+        overflow-x: hidden;
+        /* Oculta la barra horizontal */
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    #contenedorntc {
+        height: 184px;
+        width: 50%;
+        float: left;
+    }
+
+    #ntcfondo {
+        z-index: 111;
+        height: 190px;
+        width: 100%;
+        left: 310px;
+        top: 0px;
+    }
+
+    #titulonoticias {
+        height: 30px;
+        width: 54%;
+        float: right;
+        margin-top: 5%;
+    }
+
+    #texxto {
+        height: auto;
+        width: 50%;
+        margin-right: 5px;
+        float: right;
+    }
+
+    #texxto {
+        height: auto;
+        width: 50%;
+        margin-right: 15px;
+        float: right;
+    }
+
+    #btn_verdocumento {
+        height: 15px;
+        width: 70px;
+        float: left;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+    #imagenrnoticia {
+        height: 150px;
+        width: 34%;
+        float: left;
+        margin: -20% 0% 0% 9%;
+        padding: 0% 0% 0% 0%;
+    }
+
+    #izquierda {
+        height: auto;
+        width: 100%;
+        float: left;
+    }
+</style>
 <app-footer></app-footer>
