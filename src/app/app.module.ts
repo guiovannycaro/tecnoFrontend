@@ -39,6 +39,7 @@ import { RolesComponent } from './back/roles/roles.component';
 import { UsuariosComponent } from './back/usuarios/usuarios.component';
 import { DetpreferenciasComponent } from './back/detpreferencias/detpreferencias.component';
 import { VcomicdetalleComponent } from './back/vcomicdetalle/vcomicdetalle.component';
+import { SeleccionComponent } from './back/seleccion/seleccion.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { VcomicdetalleComponent } from './back/vcomicdetalle/vcomicdetalle.compo
     RevistasComponent,
     DetpreferenciasComponent,
     VcomicdetalleComponent,
+    SeleccionComponent,
 
   ],
   imports: [

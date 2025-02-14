@@ -23,6 +23,7 @@ import { RolesComponent } from './back/roles/roles.component';
 import { UsuariosComponent } from './back/usuarios/usuarios.component';
 import { DetpreferenciasComponent } from './back/detpreferencias/detpreferencias.component';
 import { VcomicdetalleComponent } from './back/vcomicdetalle/vcomicdetalle.component';
+import { SeleccionComponent } from './back/seleccion/seleccion.component';
 
 
 
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/preferencias', component: PreferenciasComponent },
   { path: 'dashboard/detpreferencias/:id', component: DetpreferenciasComponent },
+  { path: 'dashboard/vseleccion/:id', component: SeleccionComponent },
   { path: 'dashboard/commics', component: RevistasComponent },
   { path: 'dashboard/vcommicdet/:id', component: VcomicdetalleComponent },
   { path: 'dashboard/usuario', component: UsuariosComponent },

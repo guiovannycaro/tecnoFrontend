@@ -32,7 +32,7 @@ export class RevistasComponent {
       console.error("Error: ID es undefined o null");
       return;
     }
-    this.router.navigate(['dashboard/detpreferencias/', id]);
+    this.router.navigate(['dashboard/vseleccion/', id]);
   }
 
 }
