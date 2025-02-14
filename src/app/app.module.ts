@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule,FormsModule} from  '@angular/forms';
 import { NopageFoundComponent } from './nopage-found/nopage-found.component';
-import { PagesModule } from './pages/pages.module';
+
 import { LoginComponent } from './auth/login/login.component';
 import { IndexComponent } from './front/index/index.component';
 import { PieComponent } from './sharedf/pie/pie.component';
@@ -24,6 +24,22 @@ import { VerdetgenerosComponent } from './front/verdetgeneros/verdetgeneros.comp
 import { VerdetcommicsComponent } from './front/verdetcommics/verdetcommics.component';
 
 
+
+
+
+
+import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { DashboardComponent } from './back/dashboard/dashboard.component';
+import { PreferenciasComponent } from './back/preferencias/preferencias.component';
+import { RevistasComponent } from './back/revistas/revistas.component';
+import { RolesComponent } from './back/roles/roles.component';
+import { UsuariosComponent } from './back/usuarios/usuarios.component';
+import { DetpreferenciasComponent } from './back/detpreferencias/detpreferencias.component';
+import { VcomicdetalleComponent } from './back/vcomicdetalle/vcomicdetalle.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +49,10 @@ import { VerdetcommicsComponent } from './front/verdetcommics/verdetcommics.comp
     PieComponent,
     BarnavComponent,
     BarinfComponent,
+    NavbarComponent,
+    BreadcrumbsComponent,
+    FooterComponent,
+    SidebarComponent,
     CommicsComponent,
     PreferidosComponent,
     GenerosComponent,
@@ -40,12 +60,20 @@ import { VerdetcommicsComponent } from './front/verdetcommics/verdetcommics.comp
     DetpreferidosComponent,
     DetcommicsComponent,
     VerdetgenerosComponent,
-    VerdetcommicsComponent
+    VerdetcommicsComponent,
+
+    DashboardComponent,
+    RolesComponent,
+    UsuariosComponent,
+    CommicsComponent,
+    PreferenciasComponent,
+    RevistasComponent,
+    DetpreferenciasComponent,
+    VcomicdetalleComponent,
 
   ],
   imports: [
     BrowserModule,
-    PagesModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,

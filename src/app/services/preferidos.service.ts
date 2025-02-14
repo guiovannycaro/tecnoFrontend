@@ -42,6 +42,26 @@ export class PreferidosService {
     return response;
    }
 
+
+   devolGenPrefUsuario(data:any): Observable<any>{
+
+    console.log("parametro a enviar " + data)
+    let direccion = this.baseUrl + "/Preferencias/DevolGenPrefUsuario?datos=" + data;
+    let response = this.http.get<any>(direccion);
+    console.log(response);
+    return response;
+   }
+
+   devolGenComicPrefUsuario(data:any,usuario:string): Observable<any>{
+
+    console.log("parametro a enviar " + data)
+    let direccion = this.baseUrl + "/Preferencias/DevolGenComicPrefUsuario?datos=" + data +"&usuario="+usuario;
+   console.log(direccion);
+    let response = this.http.get<any>(direccion);
+    console.log(response);
+    return response;
+   }
+
    createPreferencias(usuarios: Preferencias): Observable<any>{
     let direccion = this.baseUrl + "/Preferencias/CrearPreferencias";
     let response = this.http.post<any>(direccion,usuarios);

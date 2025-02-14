@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Perfil } from '../../modelos/perfil';
 import { SeguridadService } from '../../services/seguridad.service';
 
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -34,32 +35,6 @@ export class SidebarComponent implements OnInit {
     this.usuario = sessionStorage.getItem('username');
     console.log('Usuario recuperado dasboard:', this.usuario);
     this.obtenerPerfilUsuario(this.usuario);
-
-    this.menuItems = [
-      {
-        titulo: ' Gestion ',
-        icono: 'nav-icon fas fa-tachometer-alt',
-        routerLink: '/dashboard',
-        submenu: [
-          { titulo: ' Usuarios ', icono: 'fa fa-users', routerLink: '/dashboard/usuarios' },
-          { titulo: ' Roles ', icono: 'fa fa-user', routerLink: '/dashboard/roles' }
-        ]
-      }
-    ];
-
-    if(this.perfil != "3"){
-    this.secciontems = [
-      {
-        titulo: ' Categorias ',
-        icono: ' fa fa-server ',
-        routerLink: '/frontend',
-        submenu: [
-          { titulo: ' Commics ', icono: 'fa fa-rocket', routerLink: '/dashboard/commic' },
-          { titulo: ' Preferidos ', icono: 'fa fa-university', routerLink: '/dashboard/preferencias' }
-        ]
-      }
-    ];
-  }
 
   }
 

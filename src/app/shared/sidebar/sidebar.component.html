@@ -36,60 +36,57 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <ng-container *ngIf="esPermitidoAdmin()">
-                    <li *ngFor="let item of menuItems" class="nav-item">
-                        <ng-container *ngIf="item.submenu && item.submenu.length > 0; else singleItem">
-                            <a class="nav-link">
-                                <i [class]=" item.icono"></i>
-                                <p> {{ item.titulo }} </p>
-                                <i class="fas fa-angle-left right"></i>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li *ngFor="let subMenuItem of item.submenu" class="nav-item">
-                                    <a [routerLink]=" subMenuItem.routerLink " class="nav-link">
-                                        <i [class]=" subMenuItem.icono"></i>
-                                        <p> {{ subMenuItem.titulo }} </p>
+                    <li class="nav-item">
 
-                                    </a>
-                                </li>
-                            </ul>
-                        </ng-container>
-                        <ng-template #singleItem>
-                            <a [routerLink]="item.routerLink" class="nav-link">
+                        <a class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Gestión <i class="fas fa-angle-left right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a routerLink="/dashboard/usuario" class="nav-link">
+                                    <i class="fa fa-users"></i>
+                                    <p> Usuarios </p>
 
-                                <p> {{ item.titulo }} </p>
-                                <i [class]="item.icono"></i>
-                            </a>
-                        </ng-template>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/dashboard/rol" class="nav-link">
+                                    <i class="fa fa-users"></i>
+                                    <p> Roles </p>
+
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ng-container>
+
                 <ng-container *ngIf="esPerfilPermitido()">
+                    <li class="nav-item">
+
+                        <a class="nav-link">
+                            <i class="fa fa-server"></i>
+                            <p> Categorias </p>
+                            <i class="fas fa-angle-left right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a routerLink="/dashboard/commics" class="nav-link">
+                                    <i class="fa fa-rocket"></i>
+                                    <p> Commics </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/dashboard/preferencias" class="nav-link">
+                                    <i class="fa fa-university"></i>
+                                    <p> Preferidos </p>
+                                </a>
+                            </li>
+                        </ul>
 
 
-                    <li *ngFor="let item of secciontems" class="nav-item">
-                        <ng-container *ngIf="item.submenu && item.submenu.length > 0; else singleItem">
-                            <a class="nav-link">
-                                <i [class]=" item.icono "></i>
-                                <p> {{ item.titulo }} </p>
-                                <i class="fas fa-angle-left right"></i>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li *ngFor="let subMenuItem of item.submenu" class="nav-item">
-                                    <a [routerLink]=" subMenuItem.routerLink " class="nav-link">
-                                        <i [class]=" subMenuItem.icono "></i>
-                                        <p> {{ subMenuItem.titulo }} </p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </ng-container>
-                        <ng-template #singleItem>
-                            <a [routerLink]=" item.routerLink " class="nav-link">
-                                <i [class]=" item.icono "></i>
-                                <p> {{ item.titulo }} </p>
-                            </a>
-                        </ng-template>
                     </li>
                 </ng-container>
-
 
             </ul>
         </nav>

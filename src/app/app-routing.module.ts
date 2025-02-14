@@ -13,6 +13,20 @@ import { DetgenerosComponent } from './front/detgeneros/detgeneros.component';
 import { VerdetcommicsComponent } from './front/verdetcommics/verdetcommics.component';
 import { VerdetgenerosComponent } from './front/verdetgeneros/verdetgeneros.component';
 
+
+
+import { DashboardComponent } from './back/dashboard/dashboard.component';
+import { PreferenciasComponent } from './back/preferencias/preferencias.component';
+import { RevistasComponent } from './back/revistas/revistas.component';
+
+import { RolesComponent } from './back/roles/roles.component';
+import { UsuariosComponent } from './back/usuarios/usuarios.component';
+import { DetpreferenciasComponent } from './back/detpreferencias/detpreferencias.component';
+import { VcomicdetalleComponent } from './back/vcomicdetalle/vcomicdetalle.component';
+
+
+
+
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index', component: IndexComponent },
@@ -24,6 +38,15 @@ const routes: Routes = [
   { path: 'Generos', component: GenerosComponent },
   { path: 'detgeneros/:id', component: DetgenerosComponent },
   { path: 'vdetgenero/:id', component: VerdetgenerosComponent },
+
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard/preferencias', component: PreferenciasComponent },
+  { path: 'dashboard/detpreferencias/:id', component: DetpreferenciasComponent },
+  { path: 'dashboard/commics', component: RevistasComponent },
+  { path: 'dashboard/vcommicdet/:id', component: VcomicdetalleComponent },
+  { path: 'dashboard/usuario', component: UsuariosComponent },
+  { path: 'dashboard/rol', component: RolesComponent },
+
   { path: '**', component: NopageFoundComponent }
 
 ];
