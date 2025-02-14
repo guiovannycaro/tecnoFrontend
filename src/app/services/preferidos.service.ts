@@ -61,8 +61,8 @@ export class PreferidosService {
     return response;
    }
 
-   createPreferencias(usuarios: Preferencias): Observable<any>{
-    let direccion = this.baseUrl + "/Preferencias/CrearPreferencias";
+   actualizarPreferencias(usuarios: Preferencias): Observable<any>{
+    let direccion = this.baseUrl + "/Preferencias/ActualizarPreferencias";
     let response = this.http.post<any>(direccion,usuarios);
 
     return response;
@@ -71,10 +71,15 @@ export class PreferidosService {
 
 
 
-   actualizarPreferencias(usuarios: Preferencias): Observable<any>{
-    let direccion = this.baseUrl + "/Preferencias/ActualizarPreferencias";
-    let response = this.http.post<any>(direccion,usuarios);
-    console.log(response);
+   crearPreferencias(idcommic: string,idgenero:string,idpersona:string): Observable<any>{
+    let direccion = this.baseUrl + "/Preferencias/CrearPreferencias";
+    const body = {
+      idComic: idcommic,
+      idGenero: idgenero,
+      idPersona: idpersona
+    };
+    let response = this.http.post<any>(direccion,body);
+    console.log('crear preferencia ' + response);
     return response;
    }
 

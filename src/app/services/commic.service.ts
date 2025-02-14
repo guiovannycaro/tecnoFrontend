@@ -33,6 +33,13 @@ export class CommicService {
       return response;
     }
 
+    getCommicGeneroList(): Observable<any>{
+      let direccion = this.baseUrl + "/Commic/ListarCommicsGenero";
+      let response = this.http.get<any>(direccion,this.httpOptions);
+      console.log(response);
+      return response;
+    }
+
     getCommicById(data:any): Observable<any>{
 
       console.log("parametro a enviar " + data)
@@ -42,7 +49,14 @@ export class CommicService {
       return response;
      }
 
+     getCommicsPrefUsuario(user:any): Observable<any>{
+      console.log("parametro a enviar " + user)
+      let direccion = this.baseUrl + "Commic/obtCommicsPrefUsuario?datos=" + user;
+      let response = this.http.get<any>(direccion);
+      console.log(response);
+      return response;
 
+     }
 
      createCommic(usuarios: Commic): Observable<any>{
       let direccion = this.baseUrl + "/Commic/CrearCommic";

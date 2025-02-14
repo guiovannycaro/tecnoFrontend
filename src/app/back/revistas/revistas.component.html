@@ -40,19 +40,34 @@
                     <div id="izquierda">
                         <!--inicio_izquierda-->
                         <div *ngFor="let i of commic" id="contenedorntc">
-                            <!--inicio_contenedorntc-->
                             <div id="ntcfondo">
-                                <div id="titulonoticias" class="estilo4"><b>{{i.com_nombre}}</b></div>
-                                <div id="texxto" class="Estilo5">{{i.com_descripcion}}</div>
-                                <div id="texxto">
-                                    <a href="#" (click)="$event.preventDefault(); openEditProForm(i.com_id);">
-                                        <div id="btn_verdocumento"><b>Preferir</b></div>
-                                    </a>
+                                <div id="titulonoticias" class="estilo4"><b>{{ i.com_nombre }}</b></div>
+                                <div id="texxto" class="Estilo5">{{ i.com_descripcion }}</div>
+
+                                <!-- Se muestra el botón si i.com_id NO está en compref -->
+                                <div id="texxtod">
+                                    <!-- Si NO está en preferencias, muestra "Preferir" -->
+                                    <div *ngIf="!estaEnPreferencias(i.com_id); else preferido">
+                                        <a href="#" (click)="$event.preventDefault(); openEditProForm(i.com_id, i.gen_id);">
+                                            <div id="btn_verdocumento"><b>Preferir</b></div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Si SÍ está en preferencias, muestra "Preferido" -->
+                                    <ng-template #preferido>
+                                        <div id="btn_verdocumento"><b>Preferido</b></div>
+                                    </ng-template>
                                 </div>
+
                             </div>
-                            <div id="imagenrnoticia"> <img src="../../../assets/imagenes/{{i.com_imagen}}" width="80%" height="100%"></div>
+                            <div id="imagenrnoticia">
+                                <img src="../../../assets/imagenes/{{ i.com_imagen }}" width="80%" height="100%">
+                            </div>
                         </div>
                     </div>
+
+
+
 
 
                 </div>
@@ -108,7 +123,7 @@
         float: right;
     }
 
-    #texxto {
+    #texxtod {
         height: auto;
         width: 50%;
         margin-right: 15px;

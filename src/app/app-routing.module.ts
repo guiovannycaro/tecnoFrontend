@@ -43,7 +43,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/preferencias', component: PreferenciasComponent },
   { path: 'dashboard/detpreferencias/:id', component: DetpreferenciasComponent },
-  { path: 'dashboard/vseleccion/:id', component: SeleccionComponent },
+  { path: 'dashboard/vseleccion/:id/:idgen', component: SeleccionComponent },
   { path: 'dashboard/commics', component: RevistasComponent },
   { path: 'dashboard/vcommicdet/:id', component: VcomicdetalleComponent },
   { path: 'dashboard/usuario', component: UsuariosComponent },

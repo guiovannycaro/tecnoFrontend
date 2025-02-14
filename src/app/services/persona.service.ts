@@ -33,6 +33,14 @@ private baseUrl = "http://localhost:8090/tecno/AppAdmin/";
     return response;
   }
 
+  getIdPerUsuario(data:any): Observable<any>{
+    console.log("parametro a enviar " + data)
+    let direccion = this.baseUrl + "Personas/getUsuperID?usuario=" + data;
+    let response = this.http.get<any>(direccion);
+    console.log(response);
+    return response;
+  }
+
   getPersonasById(data:any): Observable<any>{
 
     console.log("parametro a enviar " + data)
